@@ -8,5 +8,11 @@ export const GlobalStyle = createGlobalStyle`
       background: ${theme.colors.background};
       font-family: ${theme.font.family};
     }
+
+    p {
+      font-family: ${theme.font.family};
+      font-size: ${theme.font.sizes.md};
+      color: ${theme.colors.gray800};
+    }
   `}
 `;
