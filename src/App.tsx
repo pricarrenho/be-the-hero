@@ -1,3 +1,12 @@
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./styles/global";
+import { themeWhite } from "./styles/theme";
+
 export function App() {
-  return <div>Be The Hero</div>;
+  return (
+    <ThemeProvider theme={themeWhite}>
+      <div>Be The Hero</div>
+      <GlobalStyle />
+    </ThemeProvider>
+  );
 }
