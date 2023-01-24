@@ -10,13 +10,15 @@ export const Wrapper = styled(Container)`
 export const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
   box-sizing: border-box;
 `;
 
 export const ContentLeft = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 24px;
-  align-content: center;
+  justify-content: center;
 `;
 
 export const Form = styled.div`
