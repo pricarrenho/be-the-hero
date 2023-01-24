@@ -6,13 +6,11 @@ import { NewRegistration } from "../pages/NewRegistration";
 
 export const Routes = () => {
   return (
-    <div>
-      <RouteLib>
-        <Route path="/" element={<Login />} />
-        <Route path="registration/*" element={<Registration />} />
-        <Route path="list/*" element={<List />} />
-        <Route path="new-registration/*" element={<NewRegistration />} />
-      </RouteLib>
-    </div>
+    <RouteLib>
+      <Route path="/" element={<Login />} />
+      <Route path="registration/*" element={<Registration />} />
+      <Route path="list/*" element={<List />} />
+      <Route path="new-registration/*" element={<NewRegistration />} />
+    </RouteLib>
   );
 };

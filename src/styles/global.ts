@@ -13,6 +13,12 @@ export const GlobalStyle = createGlobalStyle`
       font-family: ${theme.font.family};
       font-size: ${theme.font.sizes.md};
       color: ${theme.colors.gray800};
+      line-height: 24px;
+    }
+
+    a {
+      text-decoration: none;
+      color: ${theme.colors.gray900};
     }
   `}
 `;

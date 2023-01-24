@@ -4,17 +4,29 @@ import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
 import people from "../../assets/img/people.png";
 import * as S from "./styles";
+import { Link } from "../../components/Link";
 
 export const Login = () => {
   return (
-    <div>
-      <Logo />
-      <Title>Faça seu Logon</Title>
-      <Input type="text" name="login" value="Sua ID" />
-      <Button size={"small"} styleType="primary">
-        Entrar
-      </Button>
-      <S.Wrapper src={people} alt="" />
-    </div>
+    <S.Wrapper>
+      <S.Content>
+        <S.ContentLeft>
+          <Logo />
+
+          <S.FormContent>
+            <Title>Faça seu Logon</Title>
+            <Input type="text" name="login" placeholder="Sua ID" />
+            <Button size={"large"} styleType="primary">
+              Entrar
+            </Button>
+            <Link to="/registration" icon="ArrowRight">
+              Não tenho cadastro
+            </Link>
+          </S.FormContent>
+        </S.ContentLeft>
+
+        <S.groupImg src={people} alt="" />
+      </S.Content>
+    </S.Wrapper>
   );
 };

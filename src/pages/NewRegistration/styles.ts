@@ -12,17 +12,16 @@ export const Content = styled.div`
   grid-template-columns: 1fr 1fr;
   box-sizing: border-box;
 `;
-
 export const ContentLeft = styled.div`
   display: grid;
   gap: 24px;
-  align-content: center;
 `;
 
 export const FormContent = styled.div`
-  width: 351px;
+  width: 448px;
 `;
 
-export const groupImg = styled.img`
-  max-width: 100%;
+export const ButtonDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

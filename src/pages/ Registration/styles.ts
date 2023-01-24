@@ -19,10 +19,7 @@ export const ContentLeft = styled.div`
   align-content: center;
 `;
 
-export const FormContent = styled.div`
+export const Form = styled.div`
+  padding: 24px;
   width: 351px;
-`;
-
-export const groupImg = styled.img`
-  max-width: 100%;
 `;

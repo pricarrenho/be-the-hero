@@ -1,10 +1,8 @@
 import * as S from "./styles";
 import { InputProps } from "./types";
 
-export const Input = ({ type, name, value }: InputProps) => {
+export const Input = ({ type, name, placeholder, ...props }: InputProps) => {
   return (
-    <div>
-      <S.Wrapper id={name} name={name} type={type} value={value} />
-    </div>
+    <S.Wrapper name={name} type={type} placeholder={placeholder} {...props} />
   );
 };
