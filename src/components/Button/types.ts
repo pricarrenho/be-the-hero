@@ -1,6 +1,6 @@
 export type ButtonProps = {
-  children: String;
-  size: "small" | "medium" | "large";
+  children?: String;
   styleType: "primary" | "secondary";
   fullWidth?: boolean;
+  icon?: "Power";
 };

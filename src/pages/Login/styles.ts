@@ -15,7 +15,7 @@ export const Content = styled.div`
 
 export const ContentLeft = styled.div`
   display: grid;
-  gap: 24px;
+  gap: 16px;
   align-content: center;
 `;
 

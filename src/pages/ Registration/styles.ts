@@ -12,16 +12,18 @@ export const Content = styled.div`
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   box-sizing: border-box;
+  padding: 64px 24px;
 `;
 
 export const ContentLeft = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   justify-content: center;
+  margin-left: 48px;
+  padding: 16px;
 `;
 
 export const Form = styled.div`
-  padding: 24px;
   width: 351px;
 `;

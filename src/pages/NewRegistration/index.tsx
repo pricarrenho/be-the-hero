@@ -1,3 +1,4 @@
+import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { Link } from "../../components/Link";
@@ -8,53 +9,51 @@ import * as S from "./styles";
 export const NewRegistration = () => {
   return (
     <S.Wrapper>
-      <S.Content>
-        <S.ContentLeft>
-          <Logo />
+      <Box>
+        <S.Content>
+          <S.ContentLeft>
+            <Logo />
 
-          <div>
-            <Title>Cadastrar novo caso</Title>
-            <p>
-              Descreva o caso detalhadamente para encontrar um herói para
-              resolver isso.
-            </p>
-            <Link to="/list" icon="ArrowLeft">
-              Voltar para home
-            </Link>
-          </div>
-        </S.ContentLeft>
+            <div>
+              <Title>Cadastrar novo caso</Title>
+              <p>
+                Descreva o caso detalhadamente para encontrar um herói para
+                resolver isso.
+              </p>
+              <Link to="/home" icon="ArrowLeft">
+                Voltar para home
+              </Link>
+            </div>
+          </S.ContentLeft>
 
-        <S.FormContent>
-          <Input
-            type="text"
-            name="title"
-            placeholder="Título do caso"
-            size="large"
-          />
-          <Input
-            as="textarea"
-            name="title"
-            placeholder="Descrição"
-            rows={8}
-            size="large"
-          />
-          <Input
-            type="text"
-            name="value"
-            placeholder="Valor em reais"
-            size="large"
-          />
+          <S.FormContent>
+            <Input
+              type="text"
+              name="title"
+              placeholder="Título do caso"
+              size="large"
+            />
+            <Input
+              as="textarea"
+              name="title"
+              placeholder="Descrição"
+              rows={8}
+              size="large"
+            />
+            <Input
+              type="text"
+              name="value"
+              placeholder="Valor em reais"
+              size="large"
+            />
 
-          <S.ButtonDiv>
-            <Button size="small" styleType="secondary">
-              Cancelar
-            </Button>
-            <Button size="medium" styleType="primary">
-              Cadastrar
-            </Button>
-          </S.ButtonDiv>
-        </S.FormContent>
-      </S.Content>
+            <S.ButtonDiv>
+              <Button styleType="secondary">Cancelar</Button>
+              <Button styleType="primary">Cadastrar</Button>
+            </S.ButtonDiv>
+          </S.FormContent>
+        </S.Content>
+      </Box>
     </S.Wrapper>
   );
 };

@@ -16,7 +16,7 @@ export const Login = () => {
           <S.FormContent>
             <Title>Faça seu Logon</Title>
             <Input type="text" name="login" placeholder="Sua ID" />
-            <Button size={"large"} styleType="primary">
+            <Button fullWidth styleType="primary">
               Entrar
             </Button>
             <Link to="/registration" icon="ArrowRight">

@@ -34,7 +34,7 @@ export const Registration = () => {
               <Input type="text" name="whatsApp" placeholder="WhatsApp" />
               <Input type="text" name="cidade" placeholder="Cidade" />
               <Input type="text" name="uf" placeholder="UF" />
-              <Button size={"large"} styleType="primary">
+              <Button fullWidth styleType="primary">
                 Cadastrar
               </Button>
             </S.Form>
