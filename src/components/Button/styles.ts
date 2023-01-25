@@ -27,7 +27,11 @@ export const Wrapper = styled.button<WrapperProps>`
     border-radius: 8px;
     cursor: pointer;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
+    box-sizing: border-box;
     height: 60px;
     font-size: ${theme.font.sizes.md};
 

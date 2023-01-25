@@ -1,5 +1,5 @@
 export type LinkProps = {
-  children: String;
+  children?: String;
   to: String;
   icon?: "ArrowRight" | "ArrowLeft";
 };

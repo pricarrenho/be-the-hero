@@ -11,7 +11,6 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  box-sizing: border-box;
   padding: 64px 24px;
 `;
 

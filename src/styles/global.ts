@@ -20,5 +20,11 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: none;
       color: ${theme.colors.gray900};
     }
+
+    h2 {
+      font-size: ${theme.font.sizes.sm};
+      margin: 0;
+      padding: 0;
+    }
   `}
 `;

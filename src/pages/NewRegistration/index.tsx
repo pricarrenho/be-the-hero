@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -7,6 +8,12 @@ import { Title } from "../../components/Title";
 import * as S from "./styles";
 
 export const NewRegistration = () => {
+  const navigate = useNavigate();
+
+  const handleCancel = () => {
+    navigate("/home");
+  };
+
   return (
     <S.Wrapper>
       <Box>
@@ -48,7 +55,9 @@ export const NewRegistration = () => {
             />
 
             <S.ButtonDiv>
-              <Button styleType="secondary">Cancelar</Button>
+              <Button styleType="secondary" onClick={handleCancel}>
+                Cancelar
+              </Button>
               <Button styleType="primary">Cadastrar</Button>
             </S.ButtonDiv>
           </S.FormContent>
