@@ -32,7 +32,10 @@ export const Login = () => {
           </S.FormContent>
         </S.ContentLeft>
 
-        <S.groupImg src={people} alt="" />
+        <S.groupImg
+          src={people}
+          alt="Foto de cinco pessoas de costas se abraçando"
+        />
       </S.Content>
     </S.Wrapper>
   );

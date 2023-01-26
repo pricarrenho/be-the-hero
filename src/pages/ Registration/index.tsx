@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
@@ -7,6 +8,12 @@ import { Title } from "../../components/Title";
 import * as S from "./styles";
 
 export const Registration = () => {
+  const navigate = useNavigate();
+
+  const handleRegistration = () => {
+    navigate("/home");
+  };
+
   return (
     <S.Wrapper>
       <Box>
@@ -34,7 +41,11 @@ export const Registration = () => {
               <Input type="text" name="whatsApp" placeholder="WhatsApp" />
               <Input type="text" name="cidade" placeholder="Cidade" />
               <Input type="text" name="uf" placeholder="UF" />
-              <Button fullWidth styleType="primary">
+              <Button
+                fullWidth
+                styleType="primary"
+                onClick={handleRegistration}
+              >
                 Cadastrar
               </Button>
             </S.Form>

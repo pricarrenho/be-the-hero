@@ -18,7 +18,7 @@ export const Head = () => {
           <Logo />
         </div>
         <S.ButtonsContainer>
-          <Button styleType={"primary"} as={Link} to="/new-registration">
+          <Button styleType={"primary"} as={Link} to="/register-new-case">
             Cadastrar novo caso
           </Button>
 

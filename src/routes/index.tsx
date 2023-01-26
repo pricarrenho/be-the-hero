@@ -1,8 +1,8 @@
 import { Route, Routes as RouteLib } from "react-router-dom";
+import { RegisterNewCase } from "../pages/ RegisterNewCase";
 import { Registration } from "../pages/ Registration";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
-import { NewRegistration } from "../pages/NewRegistration";
 
 export const Routes = () => {
   return (
@@ -10,7 +10,7 @@ export const Routes = () => {
       <Route path="/" element={<Login />} />
       <Route path="registration/*" element={<Registration />} />
       <Route path="home/*" element={<Home />} />
-      <Route path="new-registration/*" element={<NewRegistration />} />
+      <Route path="register-new-case/*" element={<RegisterNewCase />} />
     </RouteLib>
   );
 };

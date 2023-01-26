@@ -7,7 +7,7 @@ import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
 import * as S from "./styles";
 
-export const NewRegistration = () => {
+export const RegisterNewCase = () => {
   const navigate = useNavigate();
 
   const handleCancel = () => {
@@ -42,7 +42,7 @@ export const NewRegistration = () => {
             />
             <Input
               as="textarea"
-              name="title"
+              name="description"
               placeholder="Descrição"
               rows={8}
               size="large"

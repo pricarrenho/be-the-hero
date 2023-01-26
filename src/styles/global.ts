@@ -14,11 +14,17 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${theme.font.sizes.md};
       color: ${theme.colors.gray800};
       line-height: 24px;
+      margin: 0;
     }
 
     a {
       text-decoration: none;
       color: ${theme.colors.gray900};
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
     }
 
     h2 {
