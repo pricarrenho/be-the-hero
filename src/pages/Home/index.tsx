@@ -1,6 +1,6 @@
 import { Card } from "../../components/Card";
 import { Container } from "../../components/Container";
-import { Head } from "../../components/Head";
+import { Header } from "../../components/Header";
 import { Title } from "../../components/Title";
 import { mockJson } from "./mockJson";
 import * as S from "./styles";
@@ -8,7 +8,7 @@ import * as S from "./styles";
 export const Home = () => {
   return (
     <Container>
-      <Head />
+      <Header />
       <Title>Casos Cadastrados</Title>
       <S.CardContainer>
         {mockJson.map((item) => {

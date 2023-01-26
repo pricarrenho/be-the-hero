@@ -1,8 +1,4 @@
-import React, { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
-
-export type InputType =
-  | TextareaHTMLAttributes<HTMLTextAreaElement>
-  | InputHTMLAttributes<HTMLInputElement>;
+import React from "react";
 
 export type InputProps = {
   type?: string;
@@ -10,4 +6,8 @@ export type InputProps = {
   placeholder: string;
   size?: "medium" | "large";
   as?: React.ElementType;
-} & InputType;
+  value: string;
+  onChange: (value: string) => void;
+  rows?: number;
+  columns?: number;
+};

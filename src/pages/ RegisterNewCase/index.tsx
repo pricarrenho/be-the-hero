@@ -39,6 +39,8 @@ export const RegisterNewCase = () => {
               name="title"
               placeholder="Título do caso"
               size="large"
+              value=""
+              onChange={(value: string) => undefined}
             />
             <Input
               as="textarea"
@@ -46,12 +48,16 @@ export const RegisterNewCase = () => {
               placeholder="Descrição"
               rows={8}
               size="large"
+              value=""
+              onChange={(value: string) => undefined}
             />
             <Input
               type="text"
               name="value"
               placeholder="Valor em reais"
               size="large"
+              value=""
+              onChange={(value: string) => undefined}
             />
 
             <S.ButtonDiv>

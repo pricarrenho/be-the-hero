@@ -36,11 +36,41 @@ export const Registration = () => {
           </S.ContentLeft>
           <div>
             <S.Form>
-              <Input type="text" name="login" placeholder="Nome da ONG" />
-              <Input type="email" name="email" placeholder="E-mail" />
-              <Input type="text" name="whatsApp" placeholder="WhatsApp" />
-              <Input type="text" name="cidade" placeholder="Cidade" />
-              <Input type="text" name="uf" placeholder="UF" />
+              <Input
+                type="text"
+                name="login"
+                placeholder="Nome da ONG"
+                value=""
+                onChange={(value: string) => undefined}
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                value=""
+                onChange={(value: string) => undefined}
+              />
+              <Input
+                type="text"
+                name="whatsApp"
+                placeholder="WhatsApp"
+                value=""
+                onChange={(value: string) => undefined}
+              />
+              <Input
+                type="text"
+                name="cidade"
+                placeholder="Cidade"
+                value=""
+                onChange={(value: string) => undefined}
+              />
+              <Input
+                type="text"
+                name="uf"
+                placeholder="UF"
+                value=""
+                onChange={(value: string) => undefined}
+              />
               <Button
                 fullWidth
                 styleType="primary"

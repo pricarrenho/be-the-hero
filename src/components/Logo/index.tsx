@@ -1,9 +1,14 @@
 import heroImg from "../../assets/img/logo.png";
+import { LogoProps } from "./types";
 
-export const Logo = () => {
+export const Logo = ({ width }: LogoProps) => {
   return (
     <div>
-      <img src={heroImg} alt="Logo do site onde está escrito Be The Hero" />
+      <img
+        src={heroImg}
+        alt="Logo do site onde está escrito Be The Hero"
+        width={width}
+      />
     </div>
   );
 };

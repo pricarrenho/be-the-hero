@@ -12,3 +12,9 @@ export const ButtonsContainer = styled.div`
   display: flex;
   gap: 16px;
 `;
+
+export const LeftContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
