@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
@@ -9,6 +10,10 @@ import * as S from "./styles";
 
 export const RegisterNewCase = () => {
   const navigate = useNavigate();
+
+  const [titleInput, setTitleInput] = useState("");
+  const [descriptionInput, setDescriptionInput] = useState("");
+  const [valueInput, setValueInput] = useState("");
 
   const handleCancel = () => {
     navigate("/home");
@@ -39,8 +44,8 @@ export const RegisterNewCase = () => {
               name="title"
               placeholder="Título do caso"
               size="large"
-              value=""
-              onChange={(value: string) => undefined}
+              value={titleInput}
+              onChange={setTitleInput}
             />
             <Input
               as="textarea"
@@ -48,16 +53,16 @@ export const RegisterNewCase = () => {
               placeholder="Descrição"
               rows={8}
               size="large"
-              value=""
-              onChange={(value: string) => undefined}
+              value={descriptionInput}
+              onChange={setDescriptionInput}
             />
             <Input
               type="text"
               name="value"
               placeholder="Valor em reais"
               size="large"
-              value=""
-              onChange={(value: string) => undefined}
+              value={valueInput}
+              onChange={setValueInput}
             />
 
             <S.ButtonDiv>

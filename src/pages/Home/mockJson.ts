@@ -4,20 +4,20 @@ export const mockJson = [
     report: "Cadelinha atropelada",
     description:
       "A cadelinha Jolie foi atropelada por um carro no bairro Santana e teve que passar por uma cirurgia às pressas.",
-    value: 120,
+    value: "R$ 120",
   },
   {
     id: 2,
     report: "Cadelinha atropelada",
     description:
       "A cadelinha Jolie foi atropelada por um carro no bairro Santana e teve que passar por uma cirurgia às pressas.",
-    value: 120,
+    value: "R$ 120",
   },
   {
     id: 3,
     report: "Cadelinha atropelada",
     description:
       "A cadelinha Jolie foi atropelada por um carro no bairro Santana e teve que passar por uma cirurgia às pressas.",
-    value: 120,
+    value: "R$ 120",
   },
 ];

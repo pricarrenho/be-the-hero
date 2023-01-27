@@ -1,6 +1,7 @@
 import React from "react";
 
 export type InputProps = {
+  id?: string;
   type?: string;
   name: string;
   placeholder: string;
@@ -10,4 +11,5 @@ export type InputProps = {
   onChange: (value: string) => void;
   rows?: number;
   columns?: number;
+  maxLength?: string;
 };

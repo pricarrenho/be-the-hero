@@ -4,7 +4,7 @@ import * as S from "./styles";
 type CardProps = {
   report: string;
   description: string;
-  value: number;
+  value: string;
 };
 
 export const Card = ({ description, report, value }: CardProps) => {

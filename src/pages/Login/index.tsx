@@ -7,15 +7,18 @@ import * as S from "./styles";
 import { Link } from "../../components/Link";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../context/GlobalContext";
+import { useState } from "react";
 
 export const Login = () => {
+  const [loginInput, setLoginInput] = useState("");
+  const { setUsername } = useGlobalContext();
+
   const navigate = useNavigate();
 
   const handleLogin = () => {
     navigate("/home");
+    setUsername(loginInput);
   };
-
-  const { username, setUsername } = useGlobalContext();
 
   return (
     <S.Wrapper>
@@ -28,24 +31,20 @@ export const Login = () => {
             <Input
               type="text"
               name="login"
+              id="login"
               placeholder="Sua ID"
-              value={username}
-              onChange={setUsername}
+              value={loginInput}
+              onChange={setLoginInput}
             />
-            {username ? (
-              <Button fullWidth styleType="primary" onClick={handleLogin}>
-                Entrar
-              </Button>
-            ) : (
-              <Button
-                fullWidth
-                styleType="primary"
-                onClick={handleLogin}
-                disabled
-              >
-                Entrar
-              </Button>
-            )}
+
+            <Button
+              fullWidth
+              styleType="primary"
+              onClick={handleLogin}
+              disabled={!loginInput}
+            >
+              Entrar
+            </Button>
 
             <Link to="/registration" icon="ArrowRight">
               Não tenho cadastro

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
@@ -5,13 +6,23 @@ import { Input } from "../../components/Input";
 import { Link } from "../../components/Link";
 import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
+import { useGlobalContext } from "../../context/GlobalContext";
 import * as S from "./styles";
 
 export const Registration = () => {
   const navigate = useNavigate();
 
+  const [nameInput, setNameInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [whatsAppInput, setWhatsAppInput] = useState("");
+  const [cityInput, setCityInput] = useState("");
+  const [ufInput, setUfInput] = useState("");
+
+  const { setUsername } = useGlobalContext();
+
   const handleRegistration = () => {
     navigate("/home");
+    setUsername(nameInput);
   };
 
   return (
@@ -38,39 +49,42 @@ export const Registration = () => {
             <S.Form>
               <Input
                 type="text"
-                name="login"
+                name="name"
                 placeholder="Nome da ONG"
-                value=""
-                onChange={(value: string) => undefined}
+                value={nameInput}
+                onChange={setNameInput}
               />
               <Input
                 type="email"
                 name="email"
                 placeholder="E-mail"
-                value=""
-                onChange={(value: string) => undefined}
+                value={emailInput}
+                onChange={setEmailInput}
               />
               <Input
                 type="text"
                 name="whatsApp"
                 placeholder="WhatsApp"
-                value=""
-                onChange={(value: string) => undefined}
+                value={whatsAppInput}
+                onChange={setWhatsAppInput}
               />
-              <Input
-                type="text"
-                name="cidade"
-                placeholder="Cidade"
-                value=""
-                onChange={(value: string) => undefined}
-              />
-              <Input
-                type="text"
-                name="uf"
-                placeholder="UF"
-                value=""
-                onChange={(value: string) => undefined}
-              />
+              <S.LastForm>
+                <Input
+                  type="text"
+                  name="cidade"
+                  placeholder="Cidade"
+                  value={cityInput}
+                  onChange={setCityInput}
+                />
+                <Input
+                  type="text"
+                  name="uf"
+                  placeholder="UF"
+                  value={ufInput}
+                  onChange={setUfInput}
+                  maxLength="2"
+                />
+              </S.LastForm>
               <Button
                 fullWidth
                 styleType="primary"

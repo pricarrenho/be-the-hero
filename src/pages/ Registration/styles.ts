@@ -27,3 +27,9 @@ export const ContentLeft = styled.div`
 export const Form = styled.div`
   width: 351px;
 `;
+
+export const LastForm = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 8px;
+`;

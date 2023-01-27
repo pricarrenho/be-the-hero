@@ -30,6 +30,7 @@ export const Input = ({
         {placeholder}
       </S.Label>
       <S.Input
+        id={name}
         name={name}
         type={type}
         ref={ref}
