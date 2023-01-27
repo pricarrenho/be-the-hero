@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
@@ -18,9 +18,19 @@ export const Registration = () => {
   const [cityInput, setCityInput] = useState("");
   const [ufInput, setUfInput] = useState("");
 
-  const { setUsername } = useGlobalContext();
+  const { setUsername, setLocalStorageUsers } = useGlobalContext();
 
-  const handleRegistration = () => {
+  const handleFormSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    setLocalStorageUsers({
+      name: nameInput,
+      email: emailInput,
+      phone: whatsAppInput,
+      city: cityInput,
+      uf: ufInput,
+    });
+
     navigate("/home");
     setUsername(nameInput);
   };
@@ -47,51 +57,60 @@ export const Registration = () => {
           </S.ContentLeft>
           <div>
             <S.Form>
-              <Input
-                type="text"
-                name="name"
-                placeholder="Nome da ONG"
-                value={nameInput}
-                onChange={setNameInput}
-              />
-              <Input
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                value={emailInput}
-                onChange={setEmailInput}
-              />
-              <Input
-                type="text"
-                name="whatsApp"
-                placeholder="WhatsApp"
-                value={whatsAppInput}
-                onChange={setWhatsAppInput}
-              />
-              <S.LastForm>
+              <form onSubmit={handleFormSubmit}>
                 <Input
                   type="text"
-                  name="cidade"
-                  placeholder="Cidade"
-                  value={cityInput}
-                  onChange={setCityInput}
+                  name="name"
+                  placeholder="Nome da ONG"
+                  value={nameInput}
+                  onChange={setNameInput}
                 />
                 <Input
-                  type="text"
-                  name="uf"
-                  placeholder="UF"
-                  value={ufInput}
-                  onChange={setUfInput}
-                  maxLength="2"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  value={emailInput}
+                  onChange={setEmailInput}
                 />
-              </S.LastForm>
-              <Button
-                fullWidth
-                styleType="primary"
-                onClick={handleRegistration}
-              >
-                Cadastrar
-              </Button>
+                <Input
+                  type="number"
+                  name="whatsApp"
+                  placeholder="WhatsApp"
+                  value={whatsAppInput}
+                  onChange={setWhatsAppInput}
+                />
+                <S.LastForm>
+                  <Input
+                    type="text"
+                    name="cidade"
+                    placeholder="Cidade"
+                    value={cityInput}
+                    onChange={setCityInput}
+                  />
+                  <Input
+                    type="text"
+                    name="uf"
+                    placeholder="UF"
+                    value={ufInput}
+                    onChange={setUfInput}
+                    maxLength="2"
+                  />
+                </S.LastForm>
+                <Button
+                  fullWidth
+                  styleType="primary"
+                  type="submit"
+                  disabled={
+                    !nameInput ||
+                    !emailInput ||
+                    !whatsAppInput ||
+                    !cityInput ||
+                    !ufInput
+                  }
+                >
+                  Cadastrar
+                </Button>
+              </form>
             </S.Form>
           </div>
         </S.Content>

@@ -3,7 +3,7 @@ import { Container } from "../../components/Container";
 
 export const Wrapper = styled(Container)`
   min-height: 100vh;
-  display: flex;
+  display: grid;
   align-items: center;
 `;
 
@@ -12,15 +12,29 @@ export const Content = styled.div`
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   padding: 64px 24px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 `;
 
 export const ContentLeft = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
   justify-content: center;
-  margin-left: 48px;
+  width: 351px;
   padding: 16px;
+
+  @media (max-width: 800px) {
+    width: 280px;
+  }
+
+  @media (max-width: 800px) {
+    a {
+      display: none;
+    }
+  }
 `;
 
 export const FormContent = styled.div`
@@ -29,6 +43,10 @@ export const FormContent = styled.div`
 
   textarea {
     resize: none;
+  }
+
+  @media (max-width: 800px) {
+    width: 280px;
   }
 `;
 

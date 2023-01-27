@@ -3,12 +3,10 @@ import { LogoProps } from "./types";
 
 export const Logo = ({ width }: LogoProps) => {
   return (
-    <div>
-      <img
-        src={heroImg}
-        alt="Logo do site onde está escrito Be The Hero"
-        width={width}
-      />
-    </div>
+    <img
+      src={heroImg}
+      alt="Logo do site onde está escrito Be The Hero"
+      width={width}
+    />
   );
 };

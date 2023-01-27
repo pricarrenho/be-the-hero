@@ -7,17 +7,28 @@ import * as S from "./styles";
 import { Link } from "../../components/Link";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../context/GlobalContext";
-import { useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 export const Login = () => {
   const [loginInput, setLoginInput] = useState("");
-  const { setUsername } = useGlobalContext();
+  const [errorLogin, setErrorLogin] = useState(false);
+  const { setUsername, handleLogin } = useGlobalContext();
+
+  useEffect(() => {
+    setErrorLogin(false);
+  }, [loginInput]);
 
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    navigate("/home");
-    setUsername(loginInput);
+  const handleFormSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    if (handleLogin(loginInput)) {
+      navigate("/home");
+      setUsername(loginInput);
+    } else {
+      setErrorLogin(true);
+    }
   };
 
   return (
@@ -28,23 +39,31 @@ export const Login = () => {
 
           <S.FormContent>
             <Title>Faça seu Logon</Title>
-            <Input
-              type="text"
-              name="login"
-              id="login"
-              placeholder="Sua ID"
-              value={loginInput}
-              onChange={setLoginInput}
-            />
+            <form onSubmit={handleFormSubmit}>
+              <Input
+                type="text"
+                name="login"
+                id="login"
+                placeholder="Seu e-mail"
+                value={loginInput}
+                onChange={setLoginInput}
+              />
 
-            <Button
-              fullWidth
-              styleType="primary"
-              onClick={handleLogin}
-              disabled={!loginInput}
-            >
-              Entrar
-            </Button>
+              <Button
+                fullWidth
+                styleType="primary"
+                disabled={!loginInput}
+                type="submit"
+              >
+                Entrar
+              </Button>
+
+              {errorLogin && (
+                <S.Error>
+                  <small>Email inválido.</small>
+                </S.Error>
+              )}
+            </form>
 
             <Link to="/registration" icon="ArrowRight">
               Não tenho cadastro

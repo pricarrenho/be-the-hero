@@ -54,6 +54,10 @@ export const Input = styled.input`
     padding-right: 24px;
     outline-color: ${theme.colors.gray700};
     margin-bottom: 8px;
+
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
   `};
 
   &:hover {

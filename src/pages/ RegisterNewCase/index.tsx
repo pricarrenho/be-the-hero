@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "../../components/Box";
 import { Button } from "../../components/Button";
@@ -6,6 +6,8 @@ import { Input } from "../../components/Input";
 import { Link } from "../../components/Link";
 import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
+import { useGlobalContext } from "../../context/GlobalContext";
+import { v4 as uuidv4 } from "uuid";
 import * as S from "./styles";
 
 export const RegisterNewCase = () => {
@@ -15,7 +17,20 @@ export const RegisterNewCase = () => {
   const [descriptionInput, setDescriptionInput] = useState("");
   const [valueInput, setValueInput] = useState("");
 
+  const { setLocalStorageCases } = useGlobalContext();
+
   const handleCancel = () => {
+    navigate("/home");
+  };
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    setLocalStorageCases({
+      title: titleInput,
+      description: descriptionInput,
+      value: Number(valueInput),
+      id: uuidv4(),
+    });
     navigate("/home");
   };
 
@@ -39,38 +54,51 @@ export const RegisterNewCase = () => {
           </S.ContentLeft>
 
           <S.FormContent>
-            <Input
-              type="text"
-              name="title"
-              placeholder="Título do caso"
-              size="large"
-              value={titleInput}
-              onChange={setTitleInput}
-            />
-            <Input
-              as="textarea"
-              name="description"
-              placeholder="Descrição"
-              rows={8}
-              size="large"
-              value={descriptionInput}
-              onChange={setDescriptionInput}
-            />
-            <Input
-              type="text"
-              name="value"
-              placeholder="Valor em reais"
-              size="large"
-              value={valueInput}
-              onChange={setValueInput}
-            />
+            <form onSubmit={handleSubmit}>
+              <Input
+                type="text"
+                name="title"
+                placeholder="Título do caso"
+                size="large"
+                value={titleInput}
+                onChange={setTitleInput}
+              />
+              <Input
+                as="textarea"
+                name="description"
+                placeholder="Descrição"
+                rows={8}
+                size="large"
+                value={descriptionInput}
+                onChange={setDescriptionInput}
+              />
+              <Input
+                type="number"
+                name="value"
+                placeholder="Valor em reais"
+                size="large"
+                value={valueInput}
+                onChange={setValueInput}
+              />
 
-            <S.ButtonDiv>
-              <Button styleType="secondary" onClick={handleCancel}>
-                Cancelar
-              </Button>
-              <Button styleType="primary">Cadastrar</Button>
-            </S.ButtonDiv>
+              <S.ButtonDiv>
+                <Button
+                  styleType="secondary"
+                  onClick={handleCancel}
+                  type="button"
+                >
+                  Cancelar
+                </Button>
+
+                <Button
+                  styleType="primary"
+                  disabled={!titleInput || !descriptionInput || !valueInput}
+                  type="submit"
+                >
+                  Cadastrar
+                </Button>
+              </S.ButtonDiv>
+            </form>
           </S.FormContent>
         </S.Content>
       </Box>

@@ -37,5 +37,10 @@ export const Wrapper = styled.button<WrapperProps>`
 
     ${styleType && WrapperModifier[styleType](theme)}
     ${fullWidth && WrapperModifier.fullWidth()}
+
+    &:disabled {
+      background-color: ${theme.colors.gray800};
+      cursor: not-allowed;
+    }
   `}
 `;
