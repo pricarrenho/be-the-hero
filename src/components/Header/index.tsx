@@ -7,16 +7,11 @@ import * as S from "./styles";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const { currentUser, handleLogout } = useGlobalContext();
 
-  const handleLogout = () => {
+  const handleLogoutButton = () => {
     navigate("/");
-    handleChange();
-  };
-
-  const { username, setUsername } = useGlobalContext();
-
-  const handleChange = () => {
-    setUsername("");
+    handleLogout();
   };
 
   return (
@@ -24,7 +19,7 @@ export const Header = () => {
       <S.Wrapper>
         <S.LeftContent>
           <Logo width="200" />
-          <p>Olá, {username}</p>
+          <p>Olá, {currentUser?.name}</p>
         </S.LeftContent>
         <S.ButtonsContainer>
           <Button styleType={"primary"} as={Link} to="/register-new-case">
@@ -34,7 +29,7 @@ export const Header = () => {
           <Button
             styleType={"secondary"}
             icon="Power"
-            onClick={handleLogout}
+            onClick={handleLogoutButton}
           ></Button>
         </S.ButtonsContainer>
       </S.Wrapper>

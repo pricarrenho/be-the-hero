@@ -1,11 +1,6 @@
 import { Box } from "../Box";
 import * as S from "./styles";
-
-type CardProps = {
-  report: string;
-  description: string;
-  value: string;
-};
+import { CardProps } from "./types";
 
 export const Card = ({ description, report, value }: CardProps) => {
   return (

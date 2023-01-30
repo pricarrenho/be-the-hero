@@ -6,9 +6,9 @@ import { Input } from "../../components/Input";
 import { Link } from "../../components/Link";
 import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
-import { useGlobalContext } from "../../context/GlobalContext";
 import { v4 as uuidv4 } from "uuid";
 import * as S from "./styles";
+import { incrementLocalStorageItem } from "../../utils/localStorage";
 
 export const RegisterNewCase = () => {
   const navigate = useNavigate();
@@ -17,15 +17,13 @@ export const RegisterNewCase = () => {
   const [descriptionInput, setDescriptionInput] = useState("");
   const [valueInput, setValueInput] = useState("");
 
-  const { setLocalStorageCases } = useGlobalContext();
-
   const handleCancel = () => {
     navigate("/home");
   };
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    setLocalStorageCases({
+    incrementLocalStorageItem("Cases", {
       title: titleInput,
       description: descriptionInput,
       value: Number(valueInput),

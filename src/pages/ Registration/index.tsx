@@ -7,10 +7,12 @@ import { Link } from "../../components/Link";
 import { Logo } from "../../components/Logo";
 import { Title } from "../../components/Title";
 import { useGlobalContext } from "../../context/GlobalContext";
+import { incrementLocalStorageItem } from "../../utils/localStorage";
 import * as S from "./styles";
 
 export const Registration = () => {
   const navigate = useNavigate();
+  const { handleLogin } = useGlobalContext();
 
   const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
@@ -18,12 +20,10 @@ export const Registration = () => {
   const [cityInput, setCityInput] = useState("");
   const [ufInput, setUfInput] = useState("");
 
-  const { setUsername, setLocalStorageUsers } = useGlobalContext();
-
   const handleFormSubmit = (event: FormEvent) => {
     event.preventDefault();
 
-    setLocalStorageUsers({
+    incrementLocalStorageItem("Users", {
       name: nameInput,
       email: emailInput,
       phone: whatsAppInput,
@@ -31,8 +31,8 @@ export const Registration = () => {
       uf: ufInput,
     });
 
+    handleLogin(emailInput);
     navigate("/home");
-    setUsername(nameInput);
   };
 
   return (

@@ -10,22 +10,21 @@ import { useGlobalContext } from "../../context/GlobalContext";
 import { FormEvent, useEffect, useState } from "react";
 
 export const Login = () => {
+  const navigate = useNavigate();
+
   const [loginInput, setLoginInput] = useState("");
   const [errorLogin, setErrorLogin] = useState(false);
-  const { setUsername, handleLogin } = useGlobalContext();
+  const { handleLogin } = useGlobalContext();
 
   useEffect(() => {
     setErrorLogin(false);
   }, [loginInput]);
-
-  const navigate = useNavigate();
 
   const handleFormSubmit = (event: FormEvent) => {
     event.preventDefault();
 
     if (handleLogin(loginInput)) {
       navigate("/home");
-      setUsername(loginInput);
     } else {
       setErrorLogin(true);
     }

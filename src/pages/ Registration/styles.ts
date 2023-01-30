@@ -37,7 +37,7 @@ export const Form = styled.div`
   width: 351px;
 
   @media (max-width: 800px) {
-    width: 280px;
+    width: 308px;
   }
 `;
 
