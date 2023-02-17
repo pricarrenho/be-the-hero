@@ -1,10 +1,8 @@
+import { useTheme } from "styled-components";
 import { Power } from "../../assets/svg/Power";
-import * as S from "./styles";
+import { Trash } from "../../assets/svg/Trash";
 import { ButtonProps } from "./types";
-
-const icons = {
-  Power: <Power color="#E02041" />,
-};
+import * as S from "./styles";
 
 export const Button = ({
   children,
@@ -13,8 +11,15 @@ export const Button = ({
   icon,
   ...props
 }: ButtonProps) => {
+  const theme = useTheme();
+
+  const icons = {
+    power: <Power color={theme.colors.red800} />,
+    trash: <Trash color={theme.colors.gray700} size={24} />,
+  };
+
   return (
-    <S.Wrapper styleType={styleType} fullWidth={fullWidth} {...props}>
+    <S.Wrapper $styleType={styleType} $fullWidth={fullWidth} {...props}>
       {icon && icons[icon]} {children}
     </S.Wrapper>
   );

@@ -1,7 +1,10 @@
 import styled, { css, DefaultTheme } from "styled-components";
-import { ButtonProps } from "./types";
+import { ButtonStyleType } from "./types";
 
-type WrapperProps = Pick<ButtonProps, "styleType" | "fullWidth">;
+type WrapperProps = {
+  $styleType: ButtonStyleType;
+  $fullWidth: boolean;
+};
 
 const WrapperModifier = {
   primary: (theme: DefaultTheme) => css`
@@ -17,13 +20,19 @@ const WrapperModifier = {
     color: ${theme.colors.gray900};
     border: 2px solid ${theme.colors.Neutral100};
   `,
+
+  tertiary: (theme: DefaultTheme) => css`
+    background: ${theme.colors.Neutral200};
+    color: ${theme.colors.gray900};
+    border: none;
+  `,
   fullWidth: () => css`
     width: 100%;
   `,
 };
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, styleType, fullWidth }) => css`
+  ${({ theme, $styleType, $fullWidth }) => css`
     border-radius: 8px;
     cursor: pointer;
     padding: 20px;
@@ -35,8 +44,8 @@ export const Wrapper = styled.button<WrapperProps>`
     height: 60px;
     font-size: ${theme.font.sizes.md};
 
-    ${styleType && WrapperModifier[styleType](theme)}
-    ${fullWidth && WrapperModifier.fullWidth()}
+    ${$styleType && WrapperModifier[$styleType](theme)}
+    ${$fullWidth && WrapperModifier.fullWidth()}
 
     &:disabled {
       background-color: ${theme.colors.gray800};

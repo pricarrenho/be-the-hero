@@ -2,13 +2,13 @@ import { Card } from "../../components/Card";
 import { Container } from "../../components/Container";
 import { Header } from "../../components/Header";
 import { Title } from "../../components/Title";
-import { CasesData } from "../../context/types";
+import { useGlobalContext } from "../../context/GlobalContext";
 import { convertToCurrency } from "../../utils/convertCurrency";
-import { getLocalStorageItem } from "../../utils/localStorage";
-
 import * as S from "./styles";
 
 export const Home = () => {
+  const { cases } = useGlobalContext();
+
   return (
     <Container>
       <Header />
@@ -17,13 +17,14 @@ export const Home = () => {
         <Title>Casos Cadastrados</Title>
 
         <S.CardContainer>
-          {getLocalStorageItem("Cases")?.map((item: CasesData) => {
+          {cases?.map((value) => {
             return (
               <Card
-                key={item.id}
-                description={item.description}
-                report={item.title}
-                value={convertToCurrency(item.value)}
+                key={value.id}
+                id={value.id}
+                description={value.description}
+                report={value.title}
+                value={convertToCurrency(value.value)}
               />
             );
           })}

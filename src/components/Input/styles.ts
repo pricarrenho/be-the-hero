@@ -58,9 +58,9 @@ export const Input = styled.input`
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
     }
-  `};
 
-  &:hover {
-    border-color: #a8a8b3;
-  }
+    &:hover {
+      border-color: ${theme.colors.gray700};
+    }
+  `};
 `;

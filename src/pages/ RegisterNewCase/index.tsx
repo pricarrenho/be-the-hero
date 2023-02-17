@@ -23,12 +23,14 @@ export const RegisterNewCase = () => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+
     incrementLocalStorageItem("Cases", {
       title: titleInput,
       description: descriptionInput,
       value: Number(valueInput),
       id: uuidv4(),
     });
+
     navigate("/home");
   };
 

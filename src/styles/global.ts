@@ -2,6 +2,10 @@ import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   ${({ theme }) => css`
+    html {
+      font-size: 62.5%;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -17,9 +21,15 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
     }
 
+    input,
+    label {
+      font-size: ${theme.font.sizes.sm};
+    }
+
     a {
       text-decoration: none;
       color: ${theme.colors.gray900};
+      font-size: ${theme.font.sizes.sm};
     }
 
     h1 {

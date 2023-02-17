@@ -5,7 +5,12 @@ import {
   removeLocalStorageItem,
   setLocalStorageItem,
 } from "../utils/localStorage";
-import { GlobalContextType, GlobalProviderProps, UserData } from "./types";
+import {
+  CasesData,
+  GlobalContextType,
+  GlobalProviderProps,
+  UserData,
+} from "./types";
 
 export const GlobalContext = createContext<GlobalContextType>(
   {} as GlobalContextType
@@ -15,6 +20,8 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
   const [currentUser, setCurrentUser] = useState<UserData | undefined>(
     getLocalStorageItem("CurrentUser")
   );
+
+  const [cases, setCases] = useState<CasesData[]>(getLocalStorageItem("Cases"));
 
   const handleLogin = (value: string) => {
     const userData: UserData[] | undefined = getLocalStorageItem(
@@ -27,6 +34,11 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     }
 
     return !!userData?.length;
+  };
+
+  const handleCases = (cases: CasesData[]) => {
+    setCases(cases);
+    setLocalStorageItem("Cases", cases);
   };
 
   const handleLogout = () => {
@@ -46,6 +58,8 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
         currentUser,
         handleLogin,
         handleLogout,
+        cases,
+        handleCases,
       }}
     >
       {children}

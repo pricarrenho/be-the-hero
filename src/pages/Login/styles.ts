@@ -41,7 +41,7 @@ export const groupImg = styled.img`
 
 export const Error = styled.small`
   ${({ theme }) => css`
-    color: #0000ff;
+    color: ${theme.colors.blue}
     font-weight: bold;
   `}
 `;

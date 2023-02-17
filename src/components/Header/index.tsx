@@ -22,13 +22,13 @@ export const Header = () => {
           <p>Olá, {currentUser?.name}</p>
         </S.LeftContent>
         <S.ButtonsContainer>
-          <Button styleType={"primary"} as={Link} to="/register-new-case">
+          <Button styleType="primary" as={Link} to="/register-new-case">
             Cadastrar novo caso
           </Button>
 
           <Button
-            styleType={"secondary"}
-            icon="Power"
+            styleType="secondary"
+            icon="power"
             onClick={handleLogoutButton}
           ></Button>
         </S.ButtonsContainer>

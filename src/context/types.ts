@@ -8,6 +8,8 @@ export type GlobalContextType = {
   currentUser?: UserData;
   handleLogin: (value: string) => boolean;
   handleLogout: () => void;
+  cases: CasesData[];
+  handleCases: (value: CasesData[]) => void;
 };
 
 export type UserData = {
