@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Be The Hero" title="Be The Hero" src=".github/assets/beTheHero.jpg" />
+    <img alt="Be The Hero" title="Be The Hero" src=".github/assets/beTheHero.png" />
 </h1>
 
 <p align="center">
@@ -13,7 +13,7 @@
 
 This project was developed using the following technologies:
 
-- [NextJS](https://nextjs.org/)
+- [React](https://reactjs.org/)
 - [Styled Components](https://styled-components.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
