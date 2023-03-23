@@ -53,7 +53,7 @@ $ yarn start
 
 ## 💻 Project
 
-[My Trips](https://be-the-hero.pricarrenho.com.br/) was developed to validate knowledge in React.
+[Be The Hero](https://be-the-hero.pricarrenho.com.br/) was developed to validate knowledge in React.
 
 ---
 
