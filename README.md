@@ -6,7 +6,7 @@
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-Getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>
 </p>
 
 ## 🧪 Technologies
@@ -26,7 +26,7 @@ This project was developed using the following technologies:
 Clone the project and access the folder
 
 ```bash
-$ git clone https://github.com/pricarrenho/be-the-hero && cd my-trips
+$ git clone https://github.com/pricarrenho/be-the-hero && cd be-the-hero
 ```
 
 Follow the steps below
@@ -55,6 +55,10 @@ $ yarn start
 
 [Be The Hero](https://be-the-hero.pricarrenho.com.br/) was developed to validate knowledge in React.
 
+<br/>
+
 ---
 
-<p align="center">Made with 💜 by Priscilla Carrenho</p>
+<p align="center">
+Made with 💜 by <a href="https://www.pricarrenho.com.br">Priscilla Carrenho</a> 
+</p>
